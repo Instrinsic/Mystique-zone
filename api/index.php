@@ -3,6 +3,7 @@
     <?php
         $request = $_SERVER['REQUEST_URI'];
         $length = count(explode("/", $request));
+        echo $length;
         switch($length){
             case 3:
                 $name = explode('/', $request)[2];
