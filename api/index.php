@@ -23,15 +23,17 @@
                 ));
                 $response = curl_exec($curl);
                 $response = json_decode($response, true);
-                echo "<title>".$response['d'][0]['Name'] ."- Mystique Zone</title>\n";
-                echo "<meta name=\"description\" content=\"".$response['d'][0]['Description']."\" />\n";
-                echo "<meta property=\"og:description\" content=\"".$response['d'][0]['Description']."\" />\n";
-                echo "<meta property=\"og:url\" content=\"".$_SERVER['HTTP_HOST']."\" />\n";
-                echo "<meta name=\"twitter:description\" content=\"".$response['d'][0]['Description']."\" />\n";
-                echo "<meta name=\"twitter:title\" content=\"".$response['d'][0]['Name']." - Mystique Zone\" />\n";
-                echo "<meta name=\"og:title\" content=\"".$response['d'][0]['Name']." - Mystique Zone\" />\n";
-                echo "<meta name=\"twitter:image\" content=\"https://business.vanijya.biz/".$response['d'][0]['Image']."\" />\n";
-                echo "<meta name=\"og:image\" content=\"https://business.vanijya.biz/".$response['d'][0]['Image']."\" />\n";
+                try{
+                    echo "<title>".$response['d'][0]['Name'] ."- Mystique Zone</title>\n";
+                    echo "<meta name=\"description\" content=\"".$response['d'][0]['Description']."\" />\n";
+                    echo "<meta property=\"og:description\" content=\"".$response['d'][0]['Description']."\" />\n";
+                    echo "<meta property=\"og:url\" content=\"".$_SERVER['HTTP_HOST']."\" />\n";
+                    echo "<meta name=\"twitter:description\" content=\"".$response['d'][0]['Description']."\" />\n";
+                    echo "<meta name=\"twitter:title\" content=\"".$response['d'][0]['Name']." - Mystique Zone\" />\n";
+                    echo "<meta name=\"og:title\" content=\"".$response['d'][0]['Name']." - Mystique Zone\" />\n";
+                    echo "<meta name=\"twitter:image\" content=\"https://business.vanijya.biz/".$response['d'][0]['Image']."\" />\n";
+                    echo "<meta name=\"og:image\" content=\"https://business.vanijya.biz/".$response['d'][0]['Image']."\" />\n";
+                } catch(Exception $e){}
                 break;
             case 2:
                 $name = explode('/', $request)[1];
