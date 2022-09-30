@@ -7,6 +7,7 @@
         switch($length){
             case 3:
                 $name = explode('/', $request)[2];
+                echo $name;
                 $curl = curl_init();
                 curl_setopt_array($curl, array(
                 CURLOPT_URL => 'https://user.vanijya.biz/WebService.asmx/getItemSEO',
