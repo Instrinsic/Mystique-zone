@@ -3,14 +3,12 @@
     <?php
         $request = $_SERVER['REQUEST_URI'];
         $length = count(explode("/", $request));
-        echo $length;
         switch($length){
             case 3:
                 $name = explode('/', $request)[2];
-                echo $name;
                 $curl = curl_init();
                 curl_setopt_array($curl, array(
-                CURLOPT_URL => 'https://user.vanijya.biz/WebService.asmx/getItemSEO',
+                CURLOPT_URL => 'https://store.vanijya.biz/WebService.asmx/getItemSEO',
                 CURLOPT_RETURNTRANSFER => true,
                 CURLOPT_ENCODING => '',
                 CURLOPT_MAXREDIRS => 10,
@@ -24,7 +22,6 @@
                 ),
                 ));
                 $response = curl_exec($curl);
-                echo $response;
                 $response = json_decode($response, true);
                 echo "<title>".$response['d'][0]['Name'] ."- Mystique Zone</title>\n";
                 echo "<meta name=\"description\" content=\"".$response['d'][0]['Description']."\" />\n";
