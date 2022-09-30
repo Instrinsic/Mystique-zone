@@ -23,6 +23,7 @@
                 ),
                 ));
                 $response = curl_exec($curl);
+                echo $response;
                 $response = json_decode($response, true);
                 echo "<title>".$response['d'][0]['Name'] ."- Mystique Zone</title>\n";
                 echo "<meta name=\"description\" content=\"".$response['d'][0]['Description']."\" />\n";
